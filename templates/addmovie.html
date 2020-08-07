@@ -1,0 +1,22 @@
+<table align="center"border="2">
+    <tr align="center"style="background-color: greenyellow;color: red">
+        <th>moviename</th>
+        <th>Type</th>
+        <th>Rank</th>
+        <th>Casting</th>
+        <th>Release Year</th>
+    </tr>
+    {% for x in data %}
+     <tr>
+     <th>{{ x.l }}</th>
+     <th>{{ x.q }}</th>
+     <th>{{ x.rank }}</th>
+     <th>{{ x.s }}</th>
+     <th>{{ x.y }}</th>
+
+        <th>
+            <button type="button" class="btn btn-success"><a href="{% url 'save_data' %}?name={{ x.l }}&type={{ x.q }}&rank={{ x.rank }}&casting={{ x.s }}&year={{ x.y }}">addmovie</a></button>
+        </th>
+     </tr>
+    {% endfor %}
+ </table>
